@@ -1,0 +1,28 @@
+{
+    "data":[
+        {
+            "itemImageSrc": "assets/images/galleria/galleria1.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria1s.jpg",
+            "alt": "Description for Image 1",
+            "title": "Title 1"
+        },
+        {
+            "itemImageSrc": "assets/images/galleria/galleria2.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria2s.jpg",
+            "alt": "Description for Image 2",
+            "title": "Title 2"
+        },
+        {
+            "itemImageSrc": "assets/images/galleria/galleria3.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria3s.jpg",
+            "alt": "Description for Image 3",
+            "title": "Title 3"
+        },
+        {
+            "itemImageSrc": "assets/images/galleria/galleria4.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria4s.jpg",
+            "alt": "Description for Image 4",
+            "title": "Title 4"
+        }
+    ]
+}

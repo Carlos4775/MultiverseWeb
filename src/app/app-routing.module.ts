@@ -1,15 +1,17 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes, UrlSerializer } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { NotfoundComponent } from './demo/components/notfound/notfound.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
-            { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
+            { path: '', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) },
+            { path: 'auth', loadChildren: () => import('./components/auth/auth.module').then(m => m.AuthModule) },
+            { path: 'error', loadChildren: () => import('./components/error/error.module').then(m => m.ErrorModule) },
+            { path: 'access-denied', loadChildren: () => import('./components/auth/access/access.module').then(m => m.AccessModule) },
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
-        ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
+        ])
     ],
     exports: [RouterModule]
 })

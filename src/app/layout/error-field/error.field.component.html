@@ -1,0 +1,9 @@
+<div *ngIf="displayError && (message | json) !== '{}'">
+  <small class="text-red-600">{{ message }}</small>
+  <br>
+</div>
+
+<div *ngIf="displayError">
+  <small class="text-red-600" *ngFor="let message of messages">{{ message }}</small>
+  <br>
+</div>
