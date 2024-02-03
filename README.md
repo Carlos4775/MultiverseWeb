@@ -1,14 +1,17 @@
-# Sakai
+# Multiverse Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+Multiverse Web is a dedicated platform that serves as a comprehensive hub for space enthusiasts and learners alike. Explore the cosmos through a curated collection of news articles, in-depth courses, captivating images, and a wealth of information about the universe.
+
+## Technologies Used
+
+This website was developed using the following technologies:
+
+- Front-end: HTML, CSS, JavaScript using Angular framework
+- Hosting: Firebase
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
