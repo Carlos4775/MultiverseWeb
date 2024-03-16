@@ -14,6 +14,7 @@ import { SimulationsComponent } from './simulations/simulations.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { FooterComponent } from '../components/footer/footer.component';
+import { CopyrightComponent } from '../components/copyright/copyright.component';
 
 @NgModule({
     imports: [
@@ -26,6 +27,6 @@ import { FooterComponent } from '../components/footer/footer.component';
         ButtonModule,
         SkeletonModule
     ],
-    declarations: [PagesComponent, CanvasBoxComponent, NewsComponent, TheoryComponent, SimulationsComponent, GalleryComponent, FooterComponent]
+    declarations: [PagesComponent, CanvasBoxComponent, NewsComponent, TheoryComponent, SimulationsComponent, GalleryComponent, FooterComponent, CopyrightComponent]
 })
 export class PagesModule { }
