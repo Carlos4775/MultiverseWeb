@@ -23,6 +23,24 @@
             "thumbnailImageSrc": "assets/images/galleria/galleria4s.jpg",
             "alt": "Description for Image 4",
             "title": "Title 4"
+        },
+        {
+            "itemImageSrc": "assets/images/galleria/galleria4.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria4s.jpg",
+            "alt": "Description for Image 4",
+            "title": "Title 4"
+        },
+        {
+            "itemImageSrc": "assets/images/galleria/galleria4.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria4s.jpg",
+            "alt": "Description for Image 4",
+            "title": "Title 4"
+        },
+        {
+            "itemImageSrc": "assets/images/galleria/galleria4.jpg",
+            "thumbnailImageSrc": "assets/images/galleria/galleria4s.jpg",
+            "alt": "Description for Image 4",
+            "title": "Title 4"
         }
     ]
 }

@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { GalleryService } from '../service/gallery.service';
+import { GalleryService } from '../services/gallery.service';
 import { ImageGalleryVM } from '../interfaces/gallery.interface';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -17,6 +17,7 @@ export class PagesComponent implements OnInit {
     isPastHalfScreen: boolean = false;
     lastScrollPosition: number = 0;
     imagesGallery: ImageGalleryVM[] = [];
+    responsiveOptions;
 
     private unsubscribe$ = new Subject<void>();
 
@@ -24,7 +25,25 @@ export class PagesComponent implements OnInit {
         public layoutService: LayoutService,
         public galleryService: GalleryService,
         public router: Router
-    ) { }
+    ) {
+        this.responsiveOptions = [
+            {
+                breakpoint: '1024px',
+                numVisible: 3,
+                numScroll: 3
+            },
+            {
+                breakpoint: '768px',
+                numVisible: 2,
+                numScroll: 2
+            },
+            {
+                breakpoint: '560px',
+                numVisible: 1,
+                numScroll: 1
+            }
+        ];
+    }
 
     @HostListener('window:scroll')
     onWindowScroll() {

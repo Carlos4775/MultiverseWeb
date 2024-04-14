@@ -1,0 +1,29 @@
+<div id="features" class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+    <div class="grid justify-content-center">
+        <div class="col-12 text-left mt-8 mb-4">
+            <h2 class="text-900 font-normal mb-2">Latest gallery updates</h2>
+            <span class="text-600 lg:text-xl">Unleash your curiosity and explore the wonders of the universe
+                through captivating visuals and cosmic marvels in our carousel.</span>
+        </div>
+
+
+
+    </div>
+    <div>
+        <p-carousel [numVisible]="4" [numScroll]="4" [value]="imagesGallery" [showIndicators]="true"
+            [showNavigators]="true" styleClass="gallery-carousel" [responsiveOptions]="responsiveOptions">
+            <ng-template let-galleryItem pTemplate="item">
+                <div class="gallery-item">
+                    <div class="gallery-item-content">
+                        <div class="mb-3 text-center">
+                            <p-image src="{{galleryItem.itemImageSrc}}" alt="Image" height="auto" width="300"
+                                [preview]="true" appendTo="body" class="m-4 p-4">
+                            </p-image>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+
+</div>

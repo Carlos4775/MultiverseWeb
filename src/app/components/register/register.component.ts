@@ -1,15 +1,15 @@
+import { LayoutService } from './../../layout/service/app.layout.service';
 import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../auth/services/authentication.service';
-import { ToastService } from '../auth/services/toast.service';
 import { StorageService } from '../auth/services/storage.service';
-import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { ToastService } from '../auth/services/toast.service';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
+    selector: 'app-register',
+    templateUrl: './register.component.html',
     styles: [`
         :host ::ng-deep .pi-eye,
         :host ::ng-deep .pi-eye-slash {
@@ -19,54 +19,54 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
         }
     `]
 })
-export class LoginComponent implements OnDestroy {
+export class RegisterComponent implements OnDestroy {
 
-    valCheck: string[] = ['remember'];
-
-    password!: string;
-
-    loginForm = this.fb.group({
+    signupForm = this.fb.group({
+        username: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required]]
+        password: ['', [Validators.required, Validators.minLength(8)]]
     });
 
-    private loginSub: Subscription | undefined;
+    private registrationSub: Subscription | undefined;
 
     constructor(
         public router: Router,
         public layoutService: LayoutService,
-        private toast: ToastService,
         private fb: FormBuilder,
         private auth: AuthenticationService,
-        private ss: StorageService
+        private ss: StorageService,
+        private toast: ToastService
     ) { }
 
     ngOnDestroy(): void {
-        if (this.loginSub) {
-            this.loginSub.unsubscribe();
+        if (this.registrationSub) {
+            this.registrationSub.unsubscribe();
         }
     }
 
-    login() {
-        const credentials = this.loginForm.value;
+    get password() { return this.signupForm.get('password'); }
 
-        this.loginSub = this.auth.login(
-            credentials.email!,
-            credentials.password!
+    signup() {
+        const user = this.signupForm.value;
+
+        this.registrationSub = this.auth.register(
+            user.username!,
+            user.email!,
+            user.password!
         ).subscribe(
             resp => {
-                this.loginForm.reset();
+                this.signupForm.reset();
 
                 this.auth.persistUser(resp);
 
-                this.toast.showSuccess('Successfully logged in.');
+                this.toast.showSuccess('Successfully created account. Redirecting you to the quizzes.');
 
                 const attemptedRoute = this.ss.getItem('attemptedRoute');
                 this.ss.removeItem('attemptedRoute');
                 this.router.navigateByUrl(attemptedRoute || '/')
             },
             () => {
-                this.toast.showDanger('Login unsuccessful. Check your credentials.');
+                this.toast.showDanger('There was a problem registering your account.');
             }
         );
     }

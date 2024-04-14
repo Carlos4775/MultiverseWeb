@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MobileDetectionService } from 'src/app/service/mobile.detection.service';
+import { MobileDetectionService } from 'src/app/services/mobile.detection.service';
 import * as THREE from 'three';
 
 @Component({

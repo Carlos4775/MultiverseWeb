@@ -1,0 +1,53 @@
+<div class="bg-white">
+
+    <div class="overflow-hidden p-0 px-5 sm:px-8">
+        <div class="my-5 cursor-pointer" (click)="router.navigate(['/'])">
+            <img src="../../../assets/images/login/logo-black.svg">
+        </div>
+
+        <div class="flex justify-content-center align-items-start h-screen">
+            <div class="mt-5">
+                <div class="mb-5">
+                    <div class="text-900 text-3xl font-medium mb-3">Sign up</div>
+                    <span class="text-600 font-medium">Already have an account? &nbsp;
+                        <span style="color: var(--primary-color)">Sign in</span>
+                    </span>
+                </div>
+
+                <div class="md:w-30rem">
+                    <div class="flex column-gap-5">
+                        <input id="firstname" type="text" placeholder="Firstname" pInputText
+                            class="w-full md:w-30rem mb-5" style="padding:1rem">
+
+                        <input id="lastname" type="text" placeholder="Lastname" pInputText
+                            class="w-full md:w-30rem mb-5" style="padding:1rem">
+                    </div>
+
+                    <input id="email1" type="text" placeholder="Email address" pInputText class="w-full md:w-30rem mb-5"
+                        style="padding:1rem">
+
+                    <!-- <p-password id="password1" [(ngModel)]="password" placeholder="Password" [toggleMask]="true"
+                        styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem"></p-password> -->
+
+                    <div class="flex align-items-center justify-content-between mb-5 gap-5">
+                        <div class="flex align-items-center">
+                            <p-checkbox id="termsOfUse" [binary]="true" styleClass="mr-2"></p-checkbox>
+                            <label for="termsOfUse">I agree with <b>Privacy Policy</b> and <b>Terms of Use</b></label>
+                        </div>
+                    </div>
+                    <button pButton pRipple label="Sign In" class="w-full md:w-30rem p-3 text-xl"
+                        [routerLink]="['/']"></button>
+
+                    <div style="margin: 40px auto">
+                        <p-divider align="center" type="solid">
+                            <div class="inline-flex align-items-center">
+                                <p>Or</p>
+                            </div>
+                        </p-divider>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

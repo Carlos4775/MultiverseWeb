@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-copyright',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./copyright.component.css']
 })
 export class CopyrightComponent {
-    currentDate: Date = new Date();
+    currentDate: Date = new Date(); // Default value is the current date
+    @Input() text: string = '';
 }

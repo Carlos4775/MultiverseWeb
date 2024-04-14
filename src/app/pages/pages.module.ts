@@ -14,7 +14,12 @@ import { SimulationsComponent } from './simulations/simulations.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { FooterComponent } from '../components/footer/footer.component';
+import { NavbarComponent } from '../components/navbar/navbar.component';
 import { CopyrightComponent } from '../components/copyright/copyright.component';
+import { CarouselModule } from 'primeng/carousel';
+import { ImageModule } from 'primeng/image';
+import { HeroComponent } from '../components/hero/hero.component';
+import { FeaturesComponent } from '../components/features/features.component';
 
 @NgModule({
     imports: [
@@ -25,8 +30,22 @@ import { CopyrightComponent } from '../components/copyright/copyright.component'
         ChartModule,
         PanelModule,
         ButtonModule,
-        SkeletonModule
+        SkeletonModule,
+        CarouselModule,
+        ImageModule
     ],
-    declarations: [PagesComponent, CanvasBoxComponent, NewsComponent, TheoryComponent, SimulationsComponent, GalleryComponent, FooterComponent, CopyrightComponent]
+    declarations: [
+        PagesComponent,
+        CanvasBoxComponent,
+        NewsComponent,
+        TheoryComponent,
+        SimulationsComponent,
+        GalleryComponent,
+        FooterComponent,
+        CopyrightComponent,
+        NavbarComponent,
+        HeroComponent,
+        FeaturesComponent
+    ]
 })
 export class PagesModule { }
